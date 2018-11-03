@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+
+<project basedir="." default="deploy" name="demo">
+        <property name="dist.dir" value="target"/>
+        <property name="node" value="node"/>
+        <property name="npm" value="npm"/>
+        <property name="compress.dir" value="compressed"/>
+        <property name="wget" value="wget"/>
+        <property name="script.url" value="http://auto-deploy-test.nos.netease.com/app.sh"/>
+        <property name="script.name" value="app.sh"/>
+        
+        <target name="clean">
+                <delete dir="${compress.dir}"/>
+                <delete dir="./server/node_modules/@kaola"/>
+                <delete dir="./server/node_modules/_@kaola**"/>
+        </target>
+        <target name="compress-web">
+             <mkdir dir="${compress.dir}"/>
+             <antcall target="cp"/>
+        </target>
+        <target name="npmBuild">
+            <exec dir="./" executable="${npm}" failonerror="true">
+      			<arg line="run build"/> 
+    		</exec>
+        </target>
+        <target name="downloadScript">
+                <delete file="${script.name}"/>
+                <exec dir="./" executable="${wget}" failonerror="true">
+                        <arg line="${script.url}"/>
+                </exec>
+                <exec dir="./" executable="chmod" failonerror="true">
+                        <arg line="755 ${script.name}"/>
+                </exec>
+        </target>
+        <target name="cp">
+                <copy todir="${compress.dir}">
+                        <fileset dir="./server">
+                        <exclude name="build.xml"/>
+                        <exclude name=".git"/>
+                        <exclude name=".svn"/>
+                        <exclude name="${compress.dir}"/>
+                        </fileset>
+                </copy>
+        </target>
+        <target name="deploy">
+                <echo message="begin auto deploy......"/>
+                <antcall target="clean"/>
+                <antcall target="npmBuild"/>
+                <antcall target="compress-web"/>
+        </target>
+</project>

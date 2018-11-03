@@ -1,0 +1,85 @@
+{
+  "name": "kappurs",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "typescript": true,
+    "framework": "@kapp/core",
+    "tsHelper": {
+      "framework": "egg"
+    }
+  },
+  "scripts": {
+    "env": "node ./node_modules/cross-env/dist/bin/cross-env",
+    "bin": "node ./node_modules/egg-bin/bin/egg-bin",
+    "scripts": "node ./node_modules/egg-scripts/bin/egg-scripts",
+    "start": "npm run scripts -- start --daemon --title=kappurs",
+    "start:prod": "EGG_SERVER_ENV=prod npm start --",
+    "start:pre": "EGG_SERVER_ENV=pre npm start --",
+    "start:test": "EGG_SERVER_ENV=pre npm start --",
+    "stop": "npm run scripts -- stop --title=kappurs",
+    "dev": "npm run bin -- dev -r egg-ts-helper/register",
+    "debug": "npm run bin -- debug -r egg-ts-helper/register",
+    "test-local": "egg-bin test -r egg-ts-helper/register",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "cov": "egg-bin cov -r egg-ts-helper/register",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "ci": "npm run lint && npm run cov && npm run tsc",
+    "autod": "autod",
+    "lint": "tslint .",
+    "clean": "ets clean",
+    "postinstall": "npm run env:boot",
+    "env:boot": "kenv boot",
+    "env:switch": "kenv switch"
+  },
+  "dependencies": {
+    "@kapp/core": "^0.2.0",
+    "@kapp/deploy": "^0.1.8",
+    "@kapp/disconf": "^0.2.1",
+    "@kapp/disconf-toolkit": "^0.2.0",
+    "@kapp/dubbojs": "^0.2.0",
+    "@kapp/grayscale": "^1.0.12",
+    "@kapp/health": "^0.2.0",
+    "@kapp/kafka": "^0.2.0",
+    "@kapp/kagent": "^0.2.0",
+    "@kapp/network": "^0.2.0",
+    "@kapp/rate-limiter": "^0.2.0",
+    "@kapp/trace": "^0.2.0",
+    "@kapp/urskl": "^1.8.0",
+    "egg": "^2.0.0",
+    "egg-scripts": "^2.6.0",
+    "egg-view-art": "^1.0.3",
+    "egg-zookeeper": "^2.0.0"
+  },
+  "devDependencies": {
+    "@kapp/env": "^0.1.8",
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^7.0.12",
+    "@types/supertest": "^2.0.0",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.6.2",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.16.0",
+    "egg-ts-helper": "^1.4.2",
+    "tslib": "^1.9.0",
+    "tslint": "^4.0.0",
+    "typescript": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "author": "",
+  "license": "MIT"
+}
