@@ -32,15 +32,14 @@ export const kagent = {
    enable: true,
    package: '@kapp/kagent'
 };
+
 /**
 * middleware 区
 */
-
 export const urskl = {
     enable: true,
     package: '@kapp/urskl',
 }
-
 export const kafka = {
     enable: true,
     package: '@kapp/kafka'

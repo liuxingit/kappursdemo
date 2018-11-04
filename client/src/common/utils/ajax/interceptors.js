@@ -20,16 +20,18 @@ export const responseInterceptors = [
     {   
         name: 'formatResponse',
         success(response) {
-            const data = Object.assign({}, response.data, {
-                __response: response
-            });
+            console.log(response, 'response');
+            const data = response.data || {};
+            // const data = Object.assign({}, response.data, {
+            //     __response: response
+            // });
             return data;
         }
     },
     {
         name: 'handleError',
         success(response) {
-            console.log(response);
+            console.log(response, '-----');
             if (response.code !== 200) {
                 // do something
                 Element.Notification.error({

@@ -1,7 +1,7 @@
 import ajax from '@/common/utils/ajax';
 
 export function getUserInfo() {
-    return ajax.get('/api/user/info');
+    return ajax.get('/api/userInfo');
 }
 
 export function login() {

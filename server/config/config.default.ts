@@ -101,10 +101,10 @@ export default (appInfo: KappAppInfo) => {
         }
     }
 
-    config.urskl = {
-        cookieNames: ['NTES_SESS','NTES_YD_SESS','NTES_OSESS','NTES_PASSPORT','NTES_YD_PASSPORT'],
-        loginUrl: 'localhost:8080/login?target=#TOPURL' //'https://www.kaola.com/login.html?target=#TOPURL#'
-    };
+    // config.urskl = {
+    //     cookieNames: ['NTES_SESS','NTES_YD_SESS','NTES_OSESS','NTES_PASSPORT','NTES_YD_PASSPORT'],
+    //     loginUrl: 'http://localhost:8080/login?target=#TOPURL' //'https://www.kaola.com/login.html?target=#TOPURL#'
+    // };
 
     return config;
 };

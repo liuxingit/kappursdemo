@@ -13,7 +13,6 @@
 
 <script>
     import { mapState } from 'vuex';
-    import { demo } from '@/api';
 
     export default {
         computed: mapState({
@@ -23,7 +22,7 @@
         },
         data() {
             return {
-            }
+            };
         },
         methods: {
         }

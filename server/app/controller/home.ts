@@ -6,6 +6,7 @@ export default class HomeController extends Controller {
 
   public async index() {
       const { ctx } = this;
+      console.log(ctx, '---');
       const html = path.join(__dirname, '../public/index.html');
 
       if (await new Promise(
@@ -16,12 +17,11 @@ export default class HomeController extends Controller {
       }
   }
   async notFound() {
-      this.ctx.json('hi, RPC');
+      this.ctx.json('hi, RPC notFound');
   }
   async login() {
       const { ctx } = this;
-      const html = path.join(__dirname, '../public/login.html');
-  
+      const html = path.join(__dirname, '../public/index.html');
       if (await new Promise(
           resolve => fs.exists(html, resolve)
       )) {

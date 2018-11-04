@@ -18,6 +18,7 @@ module.exports = {
   'rules': {},
   'globals': {
     'IS_ONLINE': true,
-    'NEKUI': true
+    'NEKUI': true,
+    'URS': true
   }
 }

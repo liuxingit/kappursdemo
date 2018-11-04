@@ -3,13 +3,12 @@ const state = {
 };
 
 const getters = {
-    user: (state) => {
-        return state.user;
-    }
+    user: state => state.user
 };
 
 const actions = {
     login({ commit }, user) {
+        console.log('user', user);
         commit('login', user);
     }
 };
