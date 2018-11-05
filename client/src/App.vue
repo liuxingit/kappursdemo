@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import * as api from '@/api';
+//import * as api from '@/api';
 
 export default {
     name: 'App',
@@ -15,22 +15,22 @@ export default {
         };
     },
     async beforeCreate() {
-        const res = await api.user.getUserInfo();
-        console.log(res, '---APP.vue res');
-        let user = '';
-        if(!res){
-            return false;
-        }
-        if(res.code === 200){
-            user = res.data;
-            this.$store.dispatch(
-                'user/login',
-                user || {}
-            );
-            this.loading = true;
-            //} else {
-            //window.location.href = res.data.target;
-        }
+        // const res = await api.user.getUserInfo();
+        // console.log(res, '---APP.vue res');
+        // let user = '';
+        // if(!res){
+        //     return false;
+        // }
+        // if(res.code === 200){
+        //     user = res.data;
+        //     this.$store.dispatch(
+        //         'user/login',
+        //         user || {}
+        //     );
+        //     this.loading = true;
+        //     //} else {
+        //     //window.location.href = res.data.target;
+        // }
         // if (res.code === 401) {
         //   user = await api.user.login();
         // } else {

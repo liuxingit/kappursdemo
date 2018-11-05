@@ -16,23 +16,9 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
+    console.log('from', from);
     console.log('you are going to', to);
     next();
-
-    // console.log('路由拦截');
-    // //判断要去的路由有没有requiresAuth
-    // if (to.meta.requiresAuth) {
-    //     let token = document.cookie.getCookie('token');
-    //     if (token) {
-    //         next();
-    //     } else {
-    //         next({
-    //             path: '/login'
-    //         });
-    //     }
-    // } else {
-    //     next(); //如果无需token,那么随它去吧
-    // }
 });
 
 export default router;

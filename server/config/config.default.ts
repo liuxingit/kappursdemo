@@ -100,6 +100,13 @@ export default (appInfo: KappAppInfo) => {
             group2: 'performance'
         }
     }
+    config.static = {
+        prefix: '',
+        dir: path.join(appInfo.baseDir, 'app/public'),
+        dynamic: true,
+        preload: false,
+        buffer: true
+    }
 
     // config.urskl = {
     //     cookieNames: ['NTES_SESS','NTES_YD_SESS','NTES_OSESS','NTES_PASSPORT','NTES_YD_PASSPORT'],
