@@ -87,10 +87,10 @@
                             console.log(_data, '_data');
                             console.log(`用户名:${_username}`);
                             console.log(`是否第三方登录:${_isOther}`);
-                            window.location.href = 'http://localhost:8080';
-                            // if(_data.nextUrls && _data.nextUrls.length){
-                            //     window.location.href = _data.nextUrls[0]
-                            // }
+                            let search = window.location.search;
+                            let url = search && search.indexOf('?target=') > -1 ? search.substring(8) : '/';
+                            console.log(decodeURIComponent(url), '--url');
+                            window.location.href = decodeURIComponent(url);
                         }catch(e){
                             console.log(e, '---e');
                         }

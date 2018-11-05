@@ -1,7 +1,7 @@
 <template>
-  <div id="app" v-if="loading">
-    <router-view/>
-  </div>
+    <div id="app">
+        <router-view/>
+    </div>
 </template>
 
 <script>

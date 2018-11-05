@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>用户：{{name}}</h2>
+        <h2>demo 页面</h2>
         <!-- <h3>{{ systemTime }}</h3> -->
         <!-- <div>
             <router-link to="/demo/page/2"> to Demo page</router-link>
@@ -12,12 +12,12 @@
 </style>
 
 <script>
-    import { mapState } from 'vuex';
+    //import { mapState } from 'vuex';
 
     export default {
-        computed: mapState({
-            name: state => state.user.user.name
-        }),
+        // computed: mapState({
+        //     name: state => state.user.user.name
+        // }),
         created() {
         },
         data() {

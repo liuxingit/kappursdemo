@@ -12,6 +12,12 @@ export default [
         name: 'layout',
         component: view('layout/index')
         //redirect: '/demo'
+    },
+    {
+        path: '/demo',
+        name: 'index',
+        component: view('index/index')
+        //redirect: '/demo'
     }
     // {
     //     path: '/login',
