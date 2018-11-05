@@ -8,7 +8,6 @@ const getters = {
 
 const actions = {
     login({ commit }, user) {
-        console.log('user', user);
         commit('login', user);
     }
 };

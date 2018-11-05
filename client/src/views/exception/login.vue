@@ -95,12 +95,12 @@
                             console.log(e, '---e');
                         }
                     //window.refresh(_username,_isOther);
-                    },
+                    }
                     // regcb:function(username){ // 注册成功回调
                     //     console.log(username);
                     // }
                     // crossDomainUrl: 'passport.kaola.com/webzj/out/pub/',
-                    cookieDomain: 'kaola.com' //需要插入cookie的域，默认.163.com
+                    //cookieDomain: 'kaola.com' //需要插入cookie的域，默认.163.com
                     // regCookieDomain: 'kaola.com',//需要插入cookie的域（注册模块）
                     // domains: 'kaola.com.hk',
                 });
